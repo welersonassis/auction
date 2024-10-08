@@ -1,66 +1,17 @@
-## Foundry
+# Basic Auction
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Simple auction smart contract for study porpuses.
 
-Foundry consists of:
+## Description
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+The project consist in a simple auction smart contract project to be part of my study portfolio.
 
-## Documentation
+## Getting Started
 
-https://book.getfoundry.sh/
+### Dependencies
 
-## Usage
+* solidity 0.8.24
+* foundry 0.0.2
 
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## Author
+[@Welerson Assis](https://www.linkedin.com/in/welerson-assis/)
