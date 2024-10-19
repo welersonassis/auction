@@ -42,15 +42,15 @@ contract Auction {
     address private s_bidderAddress;
     uint256 private s_highestBidder;
     uint256 private s_lastTimeStamp;
-    uint256 private immutable i_minimumPrice;
+    uint256 private immutable i_minimumValue;
     address private immutable i_owner;
     // @dev The duration of the auction
     uint256 private immutable i_interval;
 
-    constructor(uint256 _minimumPrice, uint256 _interval) {
+    constructor(uint256 _minimumValue, uint256 _interval) {
         i_owner = msg.sender;
-        // i_minimumPrice = _minimumPrice;
-        s_highestBidder = _minimumPrice;
+        // i_minimumValue = _minimumValue;
+        s_highestBidder = _minimumValue;
         i_interval = _interval;
         s_lastTimeStamp = block.timestamp;
     }
@@ -99,7 +99,7 @@ contract Auction {
         return (upkeepNeeded, "");
     }
 
-    function performUpkeep() external view {
+    function performUpkeep(bytes calldata /** performData */) external view {
         // check to see if enough time has passed
         (bool upkeepNeeded, ) = checkUpkeep("");
         if (!upkeepNeeded) {
@@ -109,7 +109,7 @@ contract Auction {
         bool auctionIsClosed = (block.timestamp - s_lastTimeStamp) > i_interval;
 
         if (!auctionIsClosed) {
-            revert();
+            revert Auction__Closed();
         }
     }
 
